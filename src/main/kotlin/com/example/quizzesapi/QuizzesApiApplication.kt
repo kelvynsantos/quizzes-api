@@ -13,7 +13,7 @@ fun main(args: Array<String>) {
 	runApplication<QuizzesApiApplication>(*args)
 }
 @RestController
-@RequestMapping("/teste")
+@RequestMapping("/test")
 class TesteController {
 	@GetMapping
 	fun test() = "test"
