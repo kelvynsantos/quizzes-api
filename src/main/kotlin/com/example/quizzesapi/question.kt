@@ -11,6 +11,7 @@ import java.util.*
 import javax.persistence.Entity
 import javax.persistence.Id
 import javax.persistence.ManyToOne
+import javax.persistence.Table
 import javax.validation.Valid
 import javax.validation.constraints.*
 
@@ -99,5 +100,13 @@ class QuestionController(
         return ResponseEntity.noContent().build()
     }
 
-
 }
+@Entity
+@Table(name = "users")
+data class User(
+    @Id
+    val id: UUID = UUID.randomUUID(),
+    val name: String,
+    val active: Boolean,
+    val email: String
+)
