@@ -45,9 +45,7 @@ data class UserReq(
 
 @RestController
 @RequestMapping("users")
-class UserController(
-     val userRepository: UserRepository
-     ) {
+class UserController(val userRepository: UserRepository) {
      @GetMapping
      fun index() = ResponseEntity.ok(userRepository.findAll())
 

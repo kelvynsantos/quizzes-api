@@ -47,10 +47,7 @@ data class QuestionReq(
 
 @RestController
 @RequestMapping("questions")
-class QuestionController(
-    val questionRepository: QuestionRepository,
-    val categoryRepository: CategoryRepository
-     ) {
+class QuestionController(val questionRepository: QuestionRepository, val categoryRepository: CategoryRepository) {
     @GetMapping
     fun index(@RequestParam(name = "category", required = false) categoryName: String?) =
         if(categoryName == null)
@@ -101,12 +98,12 @@ class QuestionController(
     }
 
 }
-@Entity
-@Table(name = "users")
-data class User(
-    @Id
-    val id: UUID = UUID.randomUUID(),
-    val name: String,
-    val active: Boolean,
-    val email: String
-)
+//@Entity
+//@Table(name = "users")
+//data class User(
+//    @Id
+//    val id: UUID = UUID.randomUUID(),
+//    val name: String,
+//    val active: Boolean,
+//    val email: String
+//)
